@@ -1,0 +1,164 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: hsl(220, 13%, 9%);
+  --foreground: hsl(0, 0%, 98%);
+  --muted: hsl(217, 12%, 16%);
+  --muted-foreground: hsl(215, 20%, 65%);
+  --popover: hsl(224, 13%, 12%);
+  --popover-foreground: hsl(0, 0%, 98%);
+  --card: hsl(217, 12%, 16%);
+  --card-foreground: hsl(0, 0%, 98%);
+  --border: hsl(217, 12%, 16%);
+  --input: hsl(217, 12%, 16%);
+  --primary: hsl(249, 89%, 63%);
+  --primary-foreground: hsl(0, 0%, 98%);
+  --secondary: hsl(217, 12%, 16%);
+  --secondary-foreground: hsl(0, 0%, 98%);
+  --accent: hsl(217, 12%, 16%);
+  --accent-foreground: hsl(0, 0%, 98%);
+  --destructive: hsl(0, 85%, 60%);
+  --destructive-foreground: hsl(0, 0%, 98%);
+  --ring: hsl(249, 89%, 63%);
+  --radius: 0.75rem;
+  
+  /* Custom StudyMind AI colors */
+  --navy-800: hsl(220, 13%, 9%);
+  --navy-900: hsl(217, 12%, 6%);
+  --slate-700: hsl(215, 25%, 27%);
+  --slate-800: hsl(217, 32%, 17%);
+  --slate-900: hsl(222, 84%, 5%);
+  --purple-400: hsl(270, 95%, 75%);
+  --purple-500: hsl(271, 91%, 65%);
+  --purple-600: hsl(271, 81%, 56%);
+  --blue-400: hsl(213, 94%, 68%);
+  --blue-500: hsl(217, 91%, 60%);
+  --blue-600: hsl(221, 83%, 53%);
+  --green-400: hsl(142, 76%, 36%);
+  --green-500: hsl(142, 71%, 45%);
+  --green-600: hsl(142, 64%, 24%);
+  --orange-400: hsl(43, 96%, 56%);
+  --orange-500: hsl(25, 95%, 53%);
+  --orange-600: hsl(21, 90%, 48%);
+  --red-400: hsl(0, 84%, 60%);
+  --red-500: hsl(0, 72%, 51%);
+  --red-600: hsl(0, 65%, 43%);
+  --yellow-400: hsl(45, 93%, 47%);
+}
+
+.dark {
+  --background: hsl(220, 13%, 9%);
+  --foreground: hsl(0, 0%, 98%);
+  --muted: hsl(217, 12%, 16%);
+  --muted-foreground: hsl(215, 20%, 65%);
+  --popover: hsl(224, 13%, 12%);
+  --popover-foreground: hsl(0, 0%, 98%);
+  --card: hsl(217, 12%, 16%);
+  --card-foreground: hsl(0, 0%, 98%);
+  --border: hsl(217, 12%, 16%);
+  --input: hsl(217, 12%, 16%);
+  --primary: hsl(249, 89%, 63%);
+  --primary-foreground: hsl(0, 0%, 98%);
+  --secondary: hsl(217, 12%, 16%);
+  --secondary-foreground: hsl(0, 0%, 98%);
+  --accent: hsl(217, 12%, 16%);
+  --accent-foreground: hsl(0, 0%, 98%);
+  --destructive: hsl(0, 85%, 60%);
+  --destructive-foreground: hsl(0, 0%, 98%);
+  --ring: hsl(249, 89%, 63%);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    background: linear-gradient(135deg, hsl(220, 13%, 9%) 0%, hsl(217, 12%, 6%) 100%);
+  }
+}
+
+@layer components {
+  .nav-item {
+    @apply flex items-center px-4 py-3 rounded-xl text-sm font-medium transition-all duration-200;
+    color: hsl(215, 20%, 65%);
+  }
+  
+  .nav-item:hover {
+    background-color: hsl(217, 32%, 17%);
+    color: hsl(0, 0%, 98%);
+  }
+  
+  .nav-item.active {
+    background: linear-gradient(135deg, hsl(271, 91%, 65%), hsl(249, 89%, 63%));
+    color: hsl(0, 0%, 98%);
+  }
+
+  .stat-card {
+    @apply rounded-2xl p-6 border transition-all duration-200 hover:scale-105;
+  }
+
+  .stat-card.blue {
+    background: linear-gradient(135deg, hsl(217, 91%, 60%, 0.2), hsl(213, 94%, 68%, 0.2));
+    border-color: hsl(217, 91%, 60%, 0.3);
+  }
+
+  .stat-card.purple {
+    background: linear-gradient(135deg, hsl(271, 91%, 65%, 0.2), hsl(249, 89%, 63%, 0.2));
+    border-color: hsl(271, 91%, 65%, 0.3);
+  }
+
+  .stat-card.green {
+    background: linear-gradient(135deg, hsl(142, 71%, 45%, 0.2), hsl(142, 76%, 36%, 0.2));
+    border-color: hsl(142, 71%, 45%, 0.3);
+  }
+
+  .stat-card.orange {
+    background: linear-gradient(135deg, hsl(25, 95%, 53%, 0.2), hsl(43, 96%, 56%, 0.2));
+    border-color: hsl(25, 95%, 53%, 0.3);
+  }
+
+  .stat-card.red {
+    background: linear-gradient(135deg, hsl(0, 72%, 51%, 0.2), hsl(0, 84%, 60%, 0.2));
+    border-color: hsl(0, 72%, 51%, 0.3);
+  }
+
+  .gradient-button {
+    @apply px-6 py-3 rounded-xl font-semibold transition-all duration-200 hover:scale-105;
+  }
+
+  .gradient-button.purple {
+    background: linear-gradient(135deg, hsl(271, 91%, 65%), hsl(249, 89%, 63%));
+    color: hsl(0, 0%, 98%);
+  }
+
+  .gradient-button.purple:hover {
+    background: linear-gradient(135deg, hsl(271, 81%, 56%), hsl(249, 79%, 56%));
+  }
+
+  .gradient-button.blue {
+    background: linear-gradient(135deg, hsl(217, 91%, 60%), hsl(213, 94%, 68%));
+    color: hsl(0, 0%, 98%);
+  }
+
+  .gradient-button.blue:hover {
+    background: linear-gradient(135deg, hsl(221, 83%, 53%), hsl(217, 91%, 60%));
+  }
+
+  .sidebar-width {
+    width: 280px;
+  }
+
+  .main-content-margin {
+    margin-left: 280px;
+  }
+}
+
+@layer utilities {
+  .text-shadow {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+}
